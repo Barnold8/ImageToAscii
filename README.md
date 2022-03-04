@@ -25,10 +25,10 @@ The program **ONLY** accepts png files, the file extension needs to be in lower 
 ./a.exe "doge.png"
 
 == Input image ==
- [Ascii](images/doge.png)
+ [Ascii](https://github.com/Barnold8/ImageToAscii/blob/main/Images/doge.png)
 
 == Output == 
- [Ascii](images/dogeScreenShot.png)
+ [Ascii](https://github.com/Barnold8/ImageToAscii/blob/main/Images/dogeScreenShot.png)
 
 ## Special thanks!
 
