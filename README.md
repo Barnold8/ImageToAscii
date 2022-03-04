@@ -25,11 +25,11 @@ The program **ONLY** accepts png files, the file extension needs to be in lower 
 ./a.exe "doge.png"
 
 == Input image ==
-<img src="/images/doge.png" alt="Ascii" width="100"/>
+<img src="images/doge.png" alt="Ascii" width="100"/>
 
 == Output == 
-<img src="/images/dogeScreenShot.png" alt="Ascii" width="100"/>
+<img src="images/dogeScreenShot.png" alt="Ascii" width="100"/>
 
 ## Special thanks!
 
-Thanks to ![Nothings's code](https://github.com/nothings/stb), this project was possible.
+Thanks to [Nothings's code](https://github.com/nothings/stb), this project was possible.
