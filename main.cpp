@@ -58,12 +58,49 @@ std::string pixelToAscii(pixel data){
     return c;
  
 }
- 
-int main() {
+
+
+int checks(int argc, char** argv){
+
+    int arglength, hasExtension;
+    arglength = hasExtension = 0;
+    std::string path;
+
+    if(argc != 2){
+        std::cout << "Error: need a file path for the image...\n";
+    }
+
+    path = argv[1];
+    for(int i = 0; i < path.length(); i++){
+
+        if(path[i] == '.'){
+            hasExtension = 1;
+            if(!(path[i+1] == 'p' && path[i+2] == 'n' && path[i+3] == 'g')){
+                std::cout << "Error: file extension wasnt png...\n";
+                return 1;
+            }
+        }
+
+    }
+    if(hasExtension != 1){
+
+        std::cout << "Error: file has no file extension, cant decipher if its a png or not...\n";
+
+        return 1;
+
+    }    
+
+    return 0;
+}
+
+int main(int argc, char** argv) {
+
+    if(checks(argc,argv)!= 0){return -1;}
+
     int width, height, bpp, length,pixelMount;
     std::string s = "";
  
-    uint8_t* rgb_image = stbi_load("image.png", &width, &height, &bpp, 3);
+    uint8_t* rgb_image = stbi_load(argv[1], &width, &height, &bpp, 3);
     length = width*height;
  
     std::vector<pixel> P = PixelArr(rgb_image,width,height);
@@ -80,7 +117,7 @@ int main() {
  
  
  
-    std::ofstream out("output.txt");
+    std::ofstream out("ImageAscii.txt");
     out << s;
     out.close();
     stbi_image_free(rgb_image);
